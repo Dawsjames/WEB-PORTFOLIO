@@ -108,7 +108,6 @@ li a:hover:before {
   padding: 0.8rem 1.5rem;
   border-radius: 3rem;
   background: transparent;
-  font-weight: bolder;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.3rem;
@@ -120,16 +119,117 @@ li a:hover:before {
   position: relative;
 }
 
-
 .visit-btn:hover {
   transform: scale(1.05);
   background: linear-gradient(to right, #b38728, #fbf5b7, #bf953f);
-  color: black
+  color: black;
 }
 
 #menu-icon {
   font-size: 2rem;
   display: none;
+}
+
+/****************** Pop-up Form ******************/
+
+.contact-container {
+  display: none;
+  opacity: 0;
+  width: 80%;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(51, 51, 51, 0.9);
+  padding: 30px;
+  min-width: 400px;
+  max-width: 600px;
+  box-shadow: rgb(77, 67, 38) 0px 20px 30px -10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.contact-container.show {
+  display: flex;
+  opacity: 1;
+}
+
+.contact-container.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact-form input,
+textarea {
+  width: 90%;
+  border-radius: 1rem;
+  padding: 10px;
+  background-color: #c9c9c9;
+}
+
+.contact-container h2 {
+  background: linear-gradient(to right, #b38728, #fbf5b7, #bf953f);
+  background-clip: text;
+  color: transparent;
+}
+
+.form-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+
+.form-btn-group button {
+  padding: 10px 20px;
+  border-radius: 3rem;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(to right, #b38728, #fbf5b7, #bf953f);
+  background-clip: text;
+  color: transparent;
+  margin: 0 1.9rem;
+}
+
+.form-btn-group .submit-btn {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(154, 190, 112, 1) 58%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.form-btn-group .cancel-btn {
+  background: rgb(253, 29, 29);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 29, 29, 1) 0%,
+    rgba(255, 154, 109, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.form-btn-group button:hover {
+  transform: scale(1.05);
 }
 
 /****************** Home Content ******************/
@@ -164,7 +264,7 @@ section {
   min-width: 275px;
 }
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -244,7 +344,6 @@ section {
   color: transparent;
 }
 
-
 .socials i:hover {
   transform: scale(1.3);
 }
@@ -291,7 +390,6 @@ section {
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  
 }
 
 .grid-card span {
@@ -343,7 +441,7 @@ section {
   min-height: 700px;
 }
 
-.projects-card h3{
+.projects-card h3 {
   margin: 0 auto;
   text-align: center;
   font-size: 24px;
@@ -391,7 +489,7 @@ section {
     display: flex;
     padding: 1rem;
     flex-direction: column;
-    background: rgba(51, 51, 51, 0.5);
+    background: rgba(51, 51, 51, 0.93);
     border-radius: 2rem;
     width: 100%;
     max-width: 300px;
